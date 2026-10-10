@@ -21,12 +21,12 @@ def load_system():
     mol_tok = AutoTokenizer.from_pretrained("DeepChem/ChemBERTa-77M-MTR")
     mol_mod = AutoModel.from_pretrained("DeepChem/ChemBERTa-77M-MTR").to(device).eval()
     
-    # Classical Models
-    xgb = joblib.load("./models/xgb_model.pkl")
-    rf = joblib.load("./models/rf_model.pkl")
-    meta_judge = joblib.load("./models/meta_judge.pkl")
-    p_scaler = joblib.load("./models/p_scaler.pkl")
-    m_scaler = joblib.load("./models/m_scaler.pkl")
+   # Classical Models
+    xgb = joblib.load("xgb_model.pkl")
+    rf = joblib.load("rf_model.pkl")
+    meta_judge = joblib.load("meta_judge.pkl")
+    p_scaler = joblib.load("p_scaler.pkl")
+    m_scaler = joblib.load("m_scaler.pkl")
     
     return device, prot_tok, prot_mod, mol_tok, mol_mod, xgb, rf, meta_judge, p_scaler, m_scaler
 
